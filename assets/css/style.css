@@ -1,0 +1,55 @@
+:root {
+    --bordo: #460717;
+    --bordo50: rgba(70, 7, 23, 0.5);
+    --castanho: #2E050F;
+    --castanho50: rgba(46, 5, 15, 0.5);
+    --rosado: #D9CECE;
+    --bege: #E3D9CF;
+}
+
+@font-face {
+  font-family: 'cormorant';
+  src: url('/assets/fonts/Cormorant_Garamond/CormorantGaramond-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'noto';
+  src: url('/assets/fonts/Noto_Serif_Display/NotoSerifDisplay-VariableFont_wdth\,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'cormorant', sans-serif;
+
+
+}
+
+a{text-decoration: none;}
+
+/**-------------------HEADER-------------------**/
+
+
+.nav-link.active{
+    background-color: var(--bordo50);
+    color: white;
+    border-radius: 2px;
+}
+
+
+/**-------------------MAIN-------------------**/
+
+
+
+
+
+/**-------------------FOOTER-------------------**/
+
+footer{
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+}
