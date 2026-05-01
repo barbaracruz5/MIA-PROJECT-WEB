@@ -23,33 +23,77 @@
 
 body {
   font-family: 'cormorant', sans-serif;
+  margin: 50px;
+  color: var(--castanho);
 
 
 }
 
-a{text-decoration: none;}
+.big_title{
+    font-family: 'noto', serif;
+}
+
+.small_title{
+    font-family: 'noto', serif;
+    font-size: 20px;
+}
+
+a{
+  text-decoration: none;
+  color: var(--castanho);
+}
 
 /**-------------------HEADER-------------------**/
 
 
 .nav-link.active{
-    background-color: var(--bordo50);
-    color: white;
+    background-color: var(--rosado);
+    color: var(--castanho);
     border-radius: 2px;
 }
 
 
 /**-------------------MAIN-------------------**/
 
+#change{color: var(--bordo);}
+
+#mia_picture{
+    width: 50%;
+}
+
+.mia_button{
+    background-color: var(--bordo);
+    color: var(--bege);
+    border: none;
+    padding: 10px 20px;
+    
+
+}
+
+.mia_button:active,
+.mia_button:focus,
+.mia_button:active:focus {
+    background-color: var(--bege) !important;
+    color: var(--bordo) !important;
+    border: 1px solid var(--bege) !important;
+}
+
+.cards_column{
+    justify-content: center;
+}
 
 
+    
+
+.number_img{
+    width: 100px;
+}
 
 
 /**-------------------FOOTER-------------------**/
 
 footer{
-    position: absolute;
-    bottom: 0px;
-    text-align: center;
+    text-align: left;
     width: 100%;
+    margin: 0px 10px 0px 10px;
 }
