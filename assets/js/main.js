@@ -18,5 +18,11 @@ function validarForm() {
         return;
     }
 
-    alert("Mensagem enviado com sucesso!");
+    alert("Mensagem enviada com sucesso!");
 }
+
+
+
+
+
+
