@@ -1,13 +1,22 @@
-function validarFormulario(){
-    var nome = document.getElementById("nome").value;
-    var email = document.getElementById("email").value;
-    var mensagem = document.getElementById("mensagem").value;
-    if (nome === "" || email === "" || mensagem === "") {
-        alert("Por favor, preencha todos os campos.");
-        return false;
-    } else {
-        alert("Mensagem enviada com sucesso!");
-        return true;
+function validarForm() {
+    let nome = document.getElementById("nome").value;
+    let email = document.getElementById("email").value;
+    let mensagem = document.getElementById("mensagem").value;
+
+    if (nome.length < 3) {
+        alert("Preencha com o seu nome completo");
+        return;
     }
 
+    if (!email.includes("@")) {
+        alert("Email inválido");
+        return;
+    }
+
+    if (mensagem.trim() === "") {
+        alert("Escreva uma mensagem");
+        return;
+    }
+
+    alert("Mensagem enviado com sucesso!");
 }

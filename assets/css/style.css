@@ -46,6 +46,13 @@ a{
   color: var(--castanho);
 }
 
+a:hover {
+  transform: scale(1.1); 
+}
+
+.card_hover:hover{
+transform: scale(1.1); 
+}
 
 hr{
     border: 1px solid var(--castanho);
@@ -63,17 +70,25 @@ hr{
 
 /**-------------------MAIN-------------------**/
 
+#foto_perfil{
+    width: 70%;    
+}
+
+#foto_perfil:hover{
+    transform: scale(1.1);   
+}
+
+
 #change{color: var(--bordo);}
 
-#mia_picture{
-    width: 50%;
-}
+
 
 .mia_button{
     background-color: var(--bordo);
     color: var(--bege);
     border: none;
     padding: 10px 20px;
+    text-transform: uppercase;
     
 
 }
@@ -85,6 +100,8 @@ hr{
     color: var(--bordo) !important;
     border: 1px solid var(--bege) !important;
 }
+
+.mia_button:hover{transform: scale(1.1); }
 
 .cards_column{
     justify-content: center;
@@ -106,6 +123,12 @@ hr{
     
 }
 
+.up{
+    position:fixed;
+    right: 20px;
+    bottom:20px;
+}
+
 /**-------------------FOOTER-------------------**/
 
 footer{
@@ -113,3 +136,16 @@ footer{
     width: 100%;
     margin: 0px 10px 0px 10px;
 }
+
+
+
+/**-------------------RESPONSIVIDADE-------------------**/
+
+
+/* Mobile */
+@media (max-width: 576px) {
+    body{
+        text-align: center;
+    }
+ }
+

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIA - Gestão de Redes Sociais</title>
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="/assets/img/m-solid-fli/lil.svg" type="image/x-icon">
+
+    <!-- GOOGLE FONTS - OPEN SANS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!--BOOTSTRAP CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+    <!--LOCAL CSS-->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <header>
+
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/pages/index.html">Mariana Vilaça</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav  mb-2 mb-lg-0  ms-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="index.html">Página Inicial</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quemSou.html">Quem sou</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfólio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="comoTrabalho.html">Como trabalho</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicos.html">Serviços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contacto.html">Contacto</a>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <!--END NAVBAR-->
+
+    </header>
+
+    <main class="d-flex flex-column min-vh-100">
+
+        <div class="row mt-5">
+            <div class="col-lg-12 col-md-6 big_title">
+                <h1>Serviços e Pacotes</h1>
+            </div>
+
+            <div class="col-lg-12 col-md-6">
+                <p>Escolha o pacote que melhor se adapta às necessidades da sua marca.</p>
+            </div>
+        </div>
+
+        <div class="row mt-4 d-flex justify-content-center align-items-stretch">
+            <div class="col-lg-4 col-md-1">
+
+                <!--CARD-->
+
+                <div class="card card_hover" style="min-height:500px">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">Produção de Conteúdo</h3>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Conteúdo Visual de Alta Qualidade</h6>
+                        <p class="card-text">Desde 750€ por sessão</p>
+                        <p class="card-text">Criação de conteúdo fotográfico e de vídeo profissional para as suas redes
+                            sociais.</p>
+                        <p class="card-text">
+                            <hr>
+                        </p>
+                        <p class="card-text">
+                        <ul style="list-style-type: none;">
+                            <li> &#10003;Sessão fotográfica profissional (2-3 horas)</li>
+                            <li> &#10003; Até 50 fotografias editadas</li>
+                            <li> &#10003; Produção de 3–5 vídeos curtos (Reels/TikTok)</li>
+                            <li> &#10003; Edição profissional de imagens e vídeos</li>
+                            <li> &#10003; Direção criativa e conceito visual</li>
+                            <li> &#10003;Entrega em 5 dias úteis</li>
+                            <li> &#10003;Revisões incluídas</li>
+                        </ul>
+                        </p>
+                        <div class="align-self-start">
+
+                            <a href="#" class="card-link ">
+                                <button type="button" class="mia_button" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal1">
+                                    Reservar Agora
+                                </button>
+                            </a>
+                            <br>
+                            <a href="contacto.html" class="card-link">
+                                <button type="button" class="mia_button mt-2">Pedir mais informações</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--END CARD-->
+
+
+                <!--MODAL-->
+
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Reserva quase feita!</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Preencha o formulário de contacto para oficializar a sua reserva.
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="button" class="mia_button" data-bs-dismiss="modal">Voltar atrás</button>
+
+                                <a href="contacto.html">
+                                    <button type="button" class="mia_button">Confirmar</button>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--END MODAL-->
+
+            </div>
+
+            <div class="col-lg-4 col-md-1">
+
+                <!--CARD-->
+                <div class="card card_hover" style="min-height:500px">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Gestão Mensal (Recomendado)</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Acompanhamento Completo</h6>
+                        <p class="card-text">Desde €1.200 por mês</p>
+                        <p class="card-text">Gestão completa das suas redes sociais com criação de conteúdo, publicações
+                            e análise de resli/litados.</p>
+                        <p class="card-text">
+                            <hr>
+                        </p>
+                        <p class="card-text">
+                        <ul style="list-style-type: none;">
+                            <li> &#10003;Estratégia de conteúdo personalizada</li>
+                            <li> &#10003; 20–25 publicações por mês</li>
+                            <li> &#10003; Criação de conteúdo gráfico e copywriting</li>
+                            <li> &#10003; Gestão de comentários e mensagens</li>
+                            <li> &#10003; Stories diários (Instagram/Facebook)</li>
+                            <li> &#10003;Relatório mensal de performance</li>
+                            <li> &#10003;Reunião mensal de alinhamento</li>
+                            <li> &#10003;Ajustes de estratégia baseados em dados</li>
+                        </ul>
+                        </p>
+                        <div class="align-self-start">
+
+                            <a href="#" class="card-link ">
+                                <button type="button" class="mia_button" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal2">
+                                    Reservar Agora
+                                </button>
+                            </a>
+                            <br>
+                            <a href="contacto.html" class="card-link">
+                                <button type="button" class="mia_button mt-2">Pedir mais informações</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--END CARD-->
+
+                <!--MODAL-->
+
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Reserva quase feita!</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Preencha o formulário de contacto para oficializar a sua reserva.
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="button" class="mia_button" data-bs-dismiss="modal">Voltar atrás</button>
+
+                                <a href="contacto.html">
+                                    <button type="button" class="mia_button">Confirmar</button>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--END MODAL-->
+
+            </div>
+
+            <div class="col-lg-4 col-md-1">
+
+                <!--CARD-->
+
+                <div class="card card_hover" style="min-height:500px">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Pacote Completo </h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Solução Premium</h6>
+                        <p class="card-text">Desde €2.500 por mês</p>
+                        <p class="card-text">Serviço completo que combina gestão mensal com produção regli/liar de
+                            conteúdo fotográfico e vídeo.</p>
+                        <p class="card-text">
+                            <hr>
+                        </p>
+                        <p class="card-text">
+                        <ul style="list-style-type: none;">
+                            <li> &#10003; Tudo incluído no Pacote de Gestão Mensal</li>
+                            <li> &#10003; 2 sessões de produção de conteúdo por mês</li>
+                            <li> &#10003; Até 100 fotografias editadas/mês</li>
+                            <li> &#10003; 10–15 vídeos curtos por mês</li>
+                            <li> &#10003; Campanhas pagas (gestão de budget à parte)</li>
+                            <li> &#10003;Suporte prioritário</li>
+                            <li> &#10003;Análise competitiva trimestral</li>
+                            <li> &#10003;Consultoria estratégica ilimitada</li>
+                        </ul>
+                        </p>
+                        <div class="align-self-start">
+                            <a href="#" class="card-link ">
+                                <button type="button" class="mia_button" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal3">
+                                    Reservar Agora
+                                </button>
+                            </a>
+                            <br>
+                            <a href="contacto.html" class="card-link">
+                                <button type="button" class="mia_button mt-2">Pedir mais informações</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--END CARD-->
+
+                <!--MODAL-->
+
+                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Reserva quase feita!</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Preencha o formulário de contacto para oficializar a sua reserva.
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="button" class="mia_button" data-bs-dismiss="modal">Voltar atrás</button>
+
+                                <a href="contacto.html">
+                                    <button type="button" class="mia_button">Confirmar</button>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--END MODAL-->
+
+            </div>
+        </div>
+
+        <div class="row m-5">
+            <div class="col-12">
+                <hr>
+            </div>
+        </div>
+
+        <div class="row text-center mt-5">
+            <div class="col-lg-12 col-md-6 big_title">
+                <h1>Precisa de um serviço personalizado?</h1>
+            </div>
+
+        </div>
+
+        <div class="row text-center mt-2">
+            <div class="col-lg-12 col-md-6 ">
+                <p>Cada marca é única. Se nenhum dos pacotes de adequa perfeitamente às suas necessidades, </p>
+                <p> podemos criar uma soluão personalizada para si.</p>
+            </div>
+
+        </div>
+
+        <div class="row text-center mt-2 mb-5">
+            <div class="col-lg-12 col-md-6 ">
+                <a href="contacto.html">
+                    <button type="button" class="mia_button"> Solicitar um serviço personalzado</button>
+                </a>
+            </div>
+
+        </div>
+
+        <a href="servicos.html" class="up">
+            <img src="/assets/img/arrow-up.svg" alt="seta">
+        </a>
+    </main>
+
+    <footer>
+        <div class="row">
+            <div class="col-12">
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-1">
+                <h5 class="small_title">MIA VILAÇA</h5>
+                <p>
+                    Lorem ipsum dolor sit amet.
+                </p>
+
+            </div>
+
+            <div class="col-lg-3 col-md-1">
+                <h5 class="small_title">Links rápidos</h5>
+                <p><a href="index.html">Início</a></p>
+                <p><a href="/pages/quemSou.html">Quem sou</a></p>
+                <p><a href="/pages/portfolio.html">Portfólio</a></p>
+                <p><a href="/pages/comoTrabalho.html">Como trabalho</a></p>
+                <p><a href="/pages/servicos.html">Serviços</a></p>
+                <p><a href="/pages/contacto.html">Contacto</a></p>
+            </div>
+
+            <div class="col-lg-3 col-md-1">
+                <h5 class="small_title">Serviços</h5>
+                <p><a href="servicos.html">Produção de Conteúdo</a></p>
+                <p><a href="servicos.html">Gestão Mensal</a></p>
+                <p><a href="servicos.html">Pacote Completo</a></p>
+            </div>
+
+            <div class="col-lg-3 col-md-1">
+                <h5 class="small_title">Contacto</h5>
+                <div>
+                    <a href="/pages/contacto.html" target="_blank"><img src="/assets/img/envelope.svg"
+                            alt="email_icon"></a>
+                    <a href="https://www.instagram.com/mia_socialhub/" target="_blank"><img
+                            src="/assets/img/instagram.svg" alt="instagram_icon"></a>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+        <div class="row container p-3 mx-auto">
+            <div class="col-12 text-center">
+                <p class="mb-0">&copy; 2026 MIA SOCIAL HUB. DIREITOS RESERVADOS.</p>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!--JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!--LOCAL JS-->
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
