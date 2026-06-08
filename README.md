@@ -1,31 +1,70 @@
-DESCRIÇÃO DO PROJETO
+# MIA Social Hub
 
-nome : MIA_PROJECT
+Website institucional e sistema de gestão para uma profissional de gestão de redes sociais (Mariana Vilaça). O site público apresenta serviços, portfólio e formulário de contacto; o painel administrativo permite gerir serviços e consultar as mensagens recebidas.
 
-github: https://github.com/barbaracruz5/MIA-PROJECT-WEB.git
+## Tema escolhido
 
-Tema: Website para gestora de redes sociais
+Plataforma de apresentação de serviços com área administrativa — gestão de uma marca pessoal de social media, com captação de contactos através do site e gestão desses contactos num painel privado.
 
-Tecnologias utilizadas:
-_Figma para desenho e esquema de cores
-_canva para criação de imagens 
-_bootstrap para estilização e ícones
-_fontawesome para icon de título
-_google fonts para tipos de letra 
--github para armazenamento do PROJETO
+## Tecnologias utilizadas
 
-Funcionalidades:
-_Contacto rápido e prático através de formulário.
-_possibilidade de visualizar marcas trabalhadas facilmente.
-_possibilidade de ver pacotes disponíveis sem necessidade de contacto.
+- **HTML5** — estrutura das páginas
+- **CSS3** — estilos e responsividade (`assets/css/style.css`)
+- **Bootstrap 5** — layout, grelha e componentes (navbar, cards, modais)
+- **JavaScript** — validação de formulários no lado do cliente (`assets/js/main.js`)
+- **PHP** — lógica back-end (procedural)
+- **MySQL** — base de dados (acesso via PDO)
 
+## Funcionalidades principais
 
-Ideias Futuras
-_ adicionar video na página "quem sou";
-_ adicionar link para o whatssap em todas as páginas; 
-_
+### Site público
+- Página inicial, Quem sou, Como trabalho, Portfólio, Serviços e Contacto
+- Sistema de routing através de `index.php?p=<pagina>`
+- Cabeçalho, rodapé e botão "voltar ao topo" reutilizados em todas as páginas
+- Página de serviços gerada dinamicamente a partir da base de dados
+- Formulário de contacto que grava as mensagens na base de dados, com validação no cliente (JavaScript) e no servidor (PHP)
 
+### Área administrativa (`/admin`)
+- Registo de administrador (com `password_hash`)
+- Login / logout com gestão de sessões (`$_SESSION`)
+- Proteção de páginas privadas (redireciona para o login se não autenticado)
+- Dashboard com contagem de mensagens não lidas
+- CRUD completo de **Serviços** (criar, listar, editar, apagar)
+- CRUD completo de **Mensagens de contacto** (listar, marcar como lida, apagar) com `JOIN` à tabela de serviços
 
-Limitações e dificuldades
-_ Senti falta de apenas uma página "mãe" com o header e o footer, qualquer alteração teve de ser feita em todas as páginas;
-_ Dificuldade no javascript;
+## Base de dados
+
+Base de dados `mia_socialhub` com três tabelas relacionadas:
+
+- `administradores` — contas de acesso ao painel
+- `servicos` — pacotes de serviços apresentados no site
+- `mensagens_contacto` — mensagens enviadas pelo formulário, com chave estrangeira `servico_id` que referencia `servicos(id)`
+
+A relação entre `mensagens_contacto` e `servicos` permite, no painel, mostrar a que serviço cada mensagem diz respeito (consulta com `LEFT JOIN`).
+
+## Como executar localmente
+
+1. Instalar o [XAMPP](https://www.apachefriends.org/) e iniciar **Apache** e **MySQL**.
+2. Copiar a pasta do projeto para `C:\xampp\htdocs\MIA`.
+3. No phpMyAdmin (`http://localhost/phpmyadmin`), criar a base de dados executando o script SQL incluído.
+4. Criar a primeira conta de administrador através de `http://localhost/MIA/admin/registo.php`.
+5. Abrir o site em `http://localhost/MIA/`.
+
+## Segurança
+
+- Prepared statements (PDO) em todas as consultas à base de dados
+- Sanitização de dados apresentados ao utilizador com `htmlspecialchars`
+- Validação de inputs no servidor
+- Senhas guardadas encriptadas com `password_hash`
+- Proteção das páginas administrativas através de sessões
+
+## Limitações e ideias futuras
+
+- O registo de administradores deve ser restringido a administradores já autenticados em produção.
+- Possibilidade de adicionar gestão de portfólio pela área administrativa (atualmente os trabalhos estão fixos no código).
+- Envio de email automático a notificar a chegada de novas mensagens.
+- Paginação na listagem de mensagens quando o volume crescer.
+
+## Autoria
+
+Projeto desenvolvido no âmbito do módulo de Desenvolvimento Web (back-end).
