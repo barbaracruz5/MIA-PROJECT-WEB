@@ -23,8 +23,8 @@
                     </div>
 
                     <div class="col-12 mt-5 text-start">
-                        <a href="contacto.html"><button type="button" class="mia_button"> Comece agora</button></a>
-                        <a href="portfolio.html"><button type="button" class="mia_button"> Ver portfólio</button></a>
+                        <a href="index.php?p=contacto"><button type="button" class="mia_button">Comece agora</button></a>
+                        <a href="index.php?p=portfolio"><button type="button" class="mia_button"> Ver portfólio</button></a>
                     </div>
 
                 </div>
@@ -34,17 +34,11 @@
 
 
             <div class="col-lg-6 col-md-1 m-auto mt-2 text-center">
-                <a href="quemSou.html">
+                <a href="index.php?p=quemSou">
                     <img id="foto_perfil" src="./assets/img/miaHomePic.jpg" alt="foto_mia">
                 </a>
             </div>
         </div>
 
-
-
-
-        <a href="index.html" class="up">
-            <img src="./assets/img/arrow-up.svg" alt="seta">
-        </a>
 
     </main>

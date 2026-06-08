@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $dbname = 'mia_socialhub';
-$username = 'root';  // muda para o teu user
-$password = '';      // muda para a tua password
+$username = 'root';  
+$password = '';      
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);

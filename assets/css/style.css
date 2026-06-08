@@ -89,6 +89,8 @@ hr{
     border: none;
     padding: 10px 20px;
     text-transform: uppercase;
+     display: inline-block;
+    text-decoration: none;
     
 
 }
@@ -123,13 +125,20 @@ hr{
     
 }
 
+
+
+.card-img-top{
+    height: 200px;
+    object-fit: cover;
+}
+
+/**-------------------FOOTER-------------------**/
 .up{
     position:fixed;
     right: 20px;
     bottom:20px;
 }
 
-/**-------------------FOOTER-------------------**/
 
 footer{
     text-align: left;
@@ -149,3 +158,38 @@ footer{
     }
  }
 
+/**-------------------ADMIN-------------------**/
+
+.admin_navbar{
+    background-color: var(--castanho);
+}
+
+.admin_navbar .navbar-brand,
+.admin_navbar .text-white{
+    color: var(--bege) !important;
+}
+
+.admin_card{
+    border: none;
+    background-color: var(--rosado);
+    color: var(--castanho);
+}
+
+.admin_card .card-title{
+    font-family: 'noto', serif;
+}
+
+.admin_card_dark{
+    border: none;
+    background-color: var(--bordo);
+    color: var(--bege);
+}
+
+.admin_card_dark .card-title{
+    font-family: 'noto', serif;
+}
+
+.admin_login_header{
+    background-color: var(--bordo);
+    color: var(--bege);
+}

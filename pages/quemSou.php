@@ -73,9 +73,7 @@
             </div>
         </div>
 
-        <a href="quemSou.html" class="up">
-            <img src="./assets/img/arrow-up.svg" alt="seta">
-        </a>
+   
     </main>
 
     

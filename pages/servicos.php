@@ -1,5 +1,5 @@
 <?php
-require_once '../config/database.php';
+require_once 'config/database.php';
 
 // Buscar serviços ativos da base de dados
 $stmt = $pdo->prepare("SELECT * FROM servicos WHERE ativo = 1 ORDER BY ordem ASC");
@@ -42,7 +42,7 @@ $servicos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 data-bs-target="#modalServico<?php echo $servico['id']; ?>">
                             <?php echo htmlspecialchars($servico['botao_texto']); ?>
                         </button>
-                        <a href="contacto.php">
+                        <a href="index.php?p=contacto">
                             <button type="button" class="mia_button w-100">Pedir mais informações</button>
                         </a>
                     </div>
@@ -63,7 +63,7 @@ $servicos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="mia_button" data-bs-dismiss="modal">Voltar</button>
-                        <a href="contacto.php">
+                        <a href="index.php?p=contacto">
                             <button type="button" class="mia_button">Confirmar</button>
                         </a>
                     </div>
@@ -80,8 +80,8 @@ $servicos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <div class="row text-center mt-2 mb-5">
         <div class="col-12">
-            <a href="contacto.php"><button type="button" class="mia_button">Solicitar um serviço personalizado</button></a>
+            <a href="index.php?p=contacto"><button type="button" class="mia_button">Solicitar um serviço personalizado</button></a>
         </div>
     </div>
-    <a href="servicos.php" class="up"><img src="./assets/img/arrow-up.svg" alt="seta"></a>
+
 </main>
