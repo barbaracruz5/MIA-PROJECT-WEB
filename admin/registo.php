@@ -25,16 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $erro = 'As senhas não coincidem.';
     } else {
         // Verificar se o username já existe
-        $stmt = $pdo->prepare("SELECT id FROM administradores WHERE username = ?");
-        $stmt->execute([$username]);
+        $consulta = $pdo->prepare("SELECT id FROM administradores WHERE username = ?");
+        $consulta->execute([$username]);
 
-        if ($stmt->fetch()) {
+        if ($consulta->fetch()) {
             $erro = 'Esse nome de utilizador já está em uso.';
         } else {
             // CRIAR a conta com a senha encriptada
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $pdo->prepare("INSERT INTO administradores (username, password) VALUES (?, ?)");
-            $stmt->execute([$username, $hash]);
+            $consulta = $pdo->prepare("INSERT INTO administradores (username, password) VALUES (?, ?)");
+            $consulta->execute([$username, $hash]);
 
             $sucesso = 'Conta criada com sucesso! Já pode fazer login.';
         }
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Registo Admin - MIA Social Hub</title>

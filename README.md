@@ -1,6 +1,7 @@
 # MIA Social Hub
 
-Website institucional e sistema de gestão para uma profissional de gestão de redes sociais (Mariana Vilaça). O site público apresenta serviços, portfólio e formulário de contacto; o painel administrativo permite gerir serviços e consultar as mensagens recebidas.
+Website institucional e sistema de gestão para uma profissional de gestão de redes sociais (Mariana Vilaça). O site público apresenta serviços, portfólio e formulário de contacto; 
+o painel administrativo permite gerir serviços e consultar as mensagens recebidas.
 
 ## Tema escolhido
 
@@ -8,14 +9,13 @@ Plataforma de apresentação de serviços com área administrativa — gestão d
 
 ## Tecnologias utilizadas
 
-- **HTML5** — estrutura das páginas
-- **CSS3** — estilos e responsividade (`assets/css/style.css`)
-- **Bootstrap 5** — layout, grelha e componentes (navbar, cards, modais)
+- **HTML** — estrutura das páginas
+- **CSS** — estilos e responsividade (`assets/css/style.css`)
+- **Bootstrap** — layout, grelha e componentes (navbar, cards, modais)
 - **JavaScript** — validação de formulários no lado do cliente (`assets/js/main.js`)
-- **PHP** — lógica back-end (procedural)
-- **MySQL** — base de dados (acesso via PDO)
+- **PHP** — lógica back-end
+- **MySQL Workbench** — base de dados
 
-## Funcionalidades principais
 
 ### Site público
 - Página inicial, Quem sou, Como trabalho, Portfólio, Serviços e Contacto
@@ -42,13 +42,6 @@ Base de dados `mia_socialhub` com três tabelas relacionadas:
 
 A relação entre `mensagens_contacto` e `servicos` permite, no painel, mostrar a que serviço cada mensagem diz respeito (consulta com `LEFT JOIN`).
 
-## Como executar localmente
-
-1. Instalar o [XAMPP](https://www.apachefriends.org/) e iniciar **Apache** e **MySQL**.
-2. Copiar a pasta do projeto para `C:\xampp\htdocs\MIA`.
-3. No phpMyAdmin (`http://localhost/phpmyadmin`), criar a base de dados executando o script SQL incluído.
-4. Criar a primeira conta de administrador através de `http://localhost/MIA/admin/registo.php`.
-5. Abrir o site em `http://localhost/MIA/`.
 
 ## Segurança
 
@@ -59,8 +52,6 @@ A relação entre `mensagens_contacto` e `servicos` permite, no painel, mostrar 
 - Proteção das páginas administrativas através de sessões
 
 ## Limitações e ideias futuras
-
-- O registo de administradores deve ser restringido a administradores já autenticados em produção.
 - Possibilidade de adicionar gestão de portfólio pela área administrativa (atualmente os trabalhos estão fixos no código).
 - Envio de email automático a notificar a chegada de novas mensagens.
 - Paginação na listagem de mensagens quando o volume crescer.

@@ -9,32 +9,35 @@ require_once '../config/database.php';
 $mensagem = '';
 
 // ----------------- UPDATE: marcar como lida / não lida -----------------
+// 0 - n lida
+// 1 - lida
+
 if (isset($_GET['marcar_lida'])) {
-    $stmt = $pdo->prepare("UPDATE mensagens_contacto SET lida = 1 WHERE id = ?");
-    $stmt->execute([$_GET['marcar_lida']]);
+    $consulta = $pdo->prepare("UPDATE mensagens_contacto SET lida = 1 WHERE id = ?");
+    $consulta->execute([$_GET['marcar_lida']]);
     $mensagem = 'Mensagem marcada como lida.';
 }
 
 // ----------------- DELETE -----------------
 if (isset($_GET['apagar'])) {
-    $stmt = $pdo->prepare("DELETE FROM mensagens_contacto WHERE id = ?");
-    $stmt->execute([$_GET['apagar']]);
+    $consulta = $pdo->prepare("DELETE FROM mensagens_contacto WHERE id = ?");
+    $consulta->execute([$_GET['apagar']]);
     $mensagem = 'Mensagem apagada.';
 }
 
 // ----------------- READ com JOIN -----------------
-// LEFT JOIN: traz a mensagem MESMO que não tenha serviço associado
-$stmt = $pdo->query("
+// LEFT JOIN: quero todas as msgs, mesmo as que n têm serviço associado (servico_id pode ser NULL)
+$consulta = $pdo->query("
     SELECT m.*, s.titulo AS servico_titulo
     FROM mensagens_contacto m
     LEFT JOIN servicos s ON m.servico_id = s.id
     ORDER BY m.data_envio DESC
 ");
-$mensagens = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$mensagens = $consulta->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Mensagens de Contacto</title>
@@ -63,7 +66,7 @@ $mensagens = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </thead>
         <tbody>
             <?php foreach ($mensagens as $m): ?>
-            <tr class="<?php echo $m['lida'] ? '' : 'table-warning'; ?>">
+            <tr class="<?php echo $m['lida'] ? '' : 'table-warning'; ?>"> <!--marca msg a amarelo-->
                 <td><?php echo $m['lida'] ? 'Lida' : 'Nova'; ?></td>
                 <td><?php echo htmlspecialchars($m['nome']); ?></td>
                 <td><?php echo htmlspecialchars($m['email']); ?></td>

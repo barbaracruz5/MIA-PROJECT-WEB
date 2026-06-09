@@ -7,11 +7,12 @@ if (!isset($_SESSION['admin_esta_on'])) {
 require_once '../config/database.php';
 
 // Contar mensagens não lidas
-$stmt = $pdo->query("SELECT COUNT(*) as total FROM mensagens_contacto WHERE lida = 0");
-$msg_nao_lidas = $stmt->fetch()['total'];
+$consulta = $pdo->query("SELECT COUNT(*) as total FROM mensagens_contacto WHERE lida = 0");
+$msg_nao_lidas = $consulta->fetch()['total'];
 ?>
+
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Dashboard - MIA Social Hub</title>

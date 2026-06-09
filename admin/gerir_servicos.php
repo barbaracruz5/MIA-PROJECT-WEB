@@ -9,10 +9,10 @@ require_once '../config/database.php';
 
 $mensagem = ''; // feedback para o utilizador
 
-// ----------------- CREATE e UPDATE (formulário enviado) -----------------
+// ----------------- CREATE e UPDATE (qd formulário enviado) -----------------
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['guardar'])) {
     // Recolher e limpar os dados do formulário
-    $id            = $_POST['id'] ?? '';
+    $id            = $_POST['id'] ?? ''; 
     $titulo        = trim($_POST['titulo']);
     $subtitulo     = trim($_POST['subtitulo']);
     $preco         = trim($_POST['preco']);
@@ -27,18 +27,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['guardar'])) {
         $mensagem = 'O título é obrigatório.';
     } else {
         if ($id === '') {
-            // CREATE: não há id, logo é um serviço novo -> INSERT
-            $stmt = $pdo->prepare("INSERT INTO servicos 
+            // CREATE: se estiver vazio ,criar novo serviço
+            $consulta = $pdo->prepare("INSERT INTO servicos 
                 (titulo, subtitulo, preco, descricao, caracteristicas, botao_texto, ativo, ordem)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$titulo, $subtitulo, $preco, $descricao, $caracteristicas, $botao_texto, $ativo, $ordem]);
+            $consulta->execute([$titulo, $subtitulo, $preco, $descricao, $caracteristicas, $botao_texto, $ativo, $ordem]);
             $mensagem = 'Serviço criado com sucesso!';
         } else {
-            // UPDATE: já existe id -> atualizar
-            $stmt = $pdo->prepare("UPDATE servicos SET 
+            // UPDATE: já existe id -> atualizar informação
+            $consulta = $pdo->prepare("UPDATE servicos SET 
                 titulo=?, subtitulo=?, preco=?, descricao=?, caracteristicas=?, botao_texto=?, ativo=?, ordem=?
                 WHERE id=?");
-            $stmt->execute([$titulo, $subtitulo, $preco, $descricao, $caracteristicas, $botao_texto, $ativo, $ordem, $id]);
+            $consulta->execute([$titulo, $subtitulo, $preco, $descricao, $caracteristicas, $botao_texto, $ativo, $ordem, $id]);
             $mensagem = 'Serviço atualizado com sucesso!';
         }
     }
@@ -46,26 +46,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['guardar'])) {
 
 // ----------------- DELETE -----------------
 if (isset($_GET['apagar'])) {
-    $stmt = $pdo->prepare("DELETE FROM servicos WHERE id = ?");
-    $stmt->execute([$_GET['apagar']]);
+    $consulta = $pdo->prepare("DELETE FROM servicos WHERE id = ?");
+    $consulta->execute([$_GET['apagar']]);
     $mensagem = 'Serviço apagado.';
 }
 
-// ----------------- Se for para EDITAR, buscar os dados desse serviço -----------------
+// ----------------- Se for para EDITAR, apnahar os dados desse serviço -----------------
 $editar = null;
 if (isset($_GET['editar'])) {
-    $stmt = $pdo->prepare("SELECT * FROM servicos WHERE id = ?");
-    $stmt->execute([$_GET['editar']]);
-    $editar = $stmt->fetch(PDO::FETCH_ASSOC);
+    $consulta = $pdo->prepare("SELECT * FROM servicos WHERE id = ?");
+    $consulta->execute([$_GET['editar']]);
+    $editar = $consulta->fetch(PDO::FETCH_ASSOC);
 }
 
 // ----------------- READ: listar todos os serviços -----------------
-$stmt = $pdo->query("SELECT * FROM servicos ORDER BY ordem ASC");
-$servicos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$consulta = $pdo->query("SELECT * FROM servicos ORDER BY ordem ASC");// query direto pq n ha dados introduzidos pelo utilizador
+$servicos = $consulta->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Gerir Serviços</title>
@@ -85,7 +85,7 @@ $servicos = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="alert alert-info"><?php echo htmlspecialchars($mensagem); ?></div>
     <?php endif; ?>
 
-    <!-- FORMULÁRIO (serve para criar OU editar) -->
+
     <div class="card mb-4">
         <div class="card-header">
             <?php echo $editar ? 'Editar serviço' : 'Novo serviço'; ?>

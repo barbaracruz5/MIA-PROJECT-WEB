@@ -5,7 +5,7 @@ function validarForm() {
 
     if (nome.length < 3) {
         alert("Preencha com o seu nome completo");
-        return false;   // bloqueia o envio
+        return false; 
     }
     if (!email.includes("@")) {
         alert("Email inválido");
@@ -15,7 +15,7 @@ function validarForm() {
         alert("Escreva uma mensagem");
         return false;
     }
-    return true;   // deixa o formulário enviar para o PHP
+    return true; 
 }
 
 

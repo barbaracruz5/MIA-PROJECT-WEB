@@ -14,13 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    $stmt = $pdo->prepare("SELECT * FROM administradores WHERE username = ?");
-    $stmt->execute([$username]);
-    $admin = $stmt->fetch();
+    $consulta = $pdo->prepare("SELECT * FROM administradores WHERE username = ?");
+    $consulta->execute([$username]);
+    $dados = $consulta->fetch();
 
-    if ($admin && password_verify($password, $admin['password'])) {
+    if ($dados && password_verify($password, $dados['password'])) {
         $_SESSION['admin_esta_on'] = true;
-        $_SESSION['admin_nome'] = $admin['username'];
+        $_SESSION['admin_nome'] = $dados['username'];
         header('Location: dashboard.php');
         exit;
     } else {
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Login Admin - MIA Social Hub</title>
