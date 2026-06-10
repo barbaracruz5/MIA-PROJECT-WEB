@@ -61,5 +61,41 @@ A relação entre `mensagens_contacto` e `servicos` permite, no painel, mostrar 
 Projeto desenvolvido no âmbito do módulo de Desenvolvimento Web (back-end).
 
 
+## Script utilizado no Mysq Workbench 
+
+CREATE DATABASE mia_socialhub;
+
+CREATE TABLE administradores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+
+CREATE TABLE servicos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(100) NOT NULL,
+    subtitulo VARCHAR(150),
+    preco VARCHAR(50),
+    descricao TEXT,
+    caracteristicas TEXT,       
+    botao_texto VARCHAR(50) DEFAULT 'Reservar',
+    ativo TINYINT(1) DEFAULT 1,
+    ordem INT DEFAULT 0
+);
+
+
+CREATE TABLE mensagens_contacto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    telemovel VARCHAR(30),
+    mensagem TEXT NOT NULL,
+    servico_id INT,              
+    lida TINYINT(1) DEFAULT 0,
+    data_envio DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (servico_id) REFERENCES servicos(id) ON DELETE SET NULL
+);
+
 ## Projeto armazenado no git 
 https://github.com/barbaracruz5
